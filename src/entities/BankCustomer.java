@@ -50,6 +50,15 @@ public class BankCustomer {
 		return accountBalance += valueToIncrease;
 	}
 	
+	public double decreaseValue(double valueToDecrease) {
+		return accountBalance -= valueToDecrease - 5.00;
+	}
 	
+	public String toString() {
+		return "ID Customer = " + idCustomer 
+				+ " Name = " + name 
+				+ " Account Balance = " + String.format("%.2f", accountBalance);
+				
+	}
 
 }
