@@ -46,7 +46,10 @@ public class BankCustomer {
 		return accountBalance;
 	}
 	
+	public double increaseValue(double valueToIncrease) {
+		return accountBalance += valueToIncrease;
+	}
 	
-	public 
+	
 
 }
