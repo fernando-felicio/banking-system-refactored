@@ -4,13 +4,16 @@ public class BankCustomer {
 	
 	private int idCustomer;
 	private String name;
-	private double initialDeposit;
 	private double accountBalance;
 	
-	public BankCustomer(int idCustomer, String name, double initialDeposit) {
+	public BankCustomer() {
+		
+	}
+	
+	public BankCustomer(int idCustomer, String name, double accountBalance) {
 		this.idCustomer = idCustomer;
 		this.name = name;
-		this.initialDeposit = initialDeposit;
+		this.accountBalance = accountBalance;
 	}
 	
 	public BankCustomer(int idCustomer, String name) {
@@ -34,13 +37,6 @@ public class BankCustomer {
 		this.name = name;
 	}
 
-	public double getInitialDeposit() {
-		return initialDeposit;
-	}
-
-	public void setInitialDeposit(double initialDeposit) {
-		this.initialDeposit = initialDeposit;
-	}
 	
 	public double getAccountBalance() {
 		return accountBalance;
@@ -56,8 +52,8 @@ public class BankCustomer {
 	
 	public String toString() {
 		return "ID Customer = " + idCustomer 
-				+ " Name = " + name 
-				+ " Account Balance = " + String.format("%.2f", accountBalance);
+				+ ", Name = " + name 
+				+ ", Account Balance = " + String.format("%.2f", accountBalance);
 				
 	}
 
