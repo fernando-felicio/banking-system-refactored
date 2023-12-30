@@ -25,10 +25,7 @@ public class BankCustomer {
 		return idCustomer;
 	}
 	
-	public void setIdCustomer(int idCustomer) {
-		this.idCustomer = idCustomer;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -47,7 +44,7 @@ public class BankCustomer {
 	}
 	
 	public double decreaseValue(double valueToDecrease) {
-		return accountBalance -= valueToDecrease - 5.00;
+		return accountBalance -= valueToDecrease + 5.00;
 	}
 	
 	public String toString() {

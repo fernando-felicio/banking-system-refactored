@@ -19,6 +19,7 @@ public class Program {
 		System.out.println("Enter the account's name: ");
 		String accountName = scanner.nextLine();
 		
+		BankCustomer customer = null;
 		String optionDeposit = "";		
 		
 		do {
@@ -28,31 +29,34 @@ public class Program {
 			if (optionDeposit.equals("y")) {
 				System.out.println("What is the deposit amount? ");
 				double initialDeposit = scanner.nextDouble();
-				BankCustomer customer = new BankCustomer(accountId, accountName, initialDeposit);
+				customer = new BankCustomer(accountId, accountName, initialDeposit);
 				System.out.println(customer.toString());
-				break;
+								
 			}else if (optionDeposit.equals("n")) {
-				BankCustomer customer = new BankCustomer(accountId, accountName);
+				customer = new BankCustomer(accountId, accountName);
 				System.out.println(customer.toString());
-				break;
+				
 			}else {
 				System.out.println("Invalid option");
 				optionDeposit = "";
+				continue;
 			}
 			
-		} while (true);
+						
+			System.out.println("Enter a deposit value: ");
+			double depositValue = scanner.nextDouble();
+			customer.increaseValue(depositValue);
+			System.out.println(customer.toString());
+			
+			System.out.println("Enter a withdraw value: ");
+			double withdrawValue = scanner.nextDouble();
+			customer.decreaseValue(withdrawValue);
+			System.out.println(customer.toString());
+			break;
+			
+		} while (!optionDeposit.equals("n"));
 		
-		BankCustomer customer = new BankCustomer();
 		
-		System.out.println("Enter a deposit value: ");
-		double depositValue = scanner.nextDouble();
-		customer.increaseValue(depositValue);
-		System.out.println(customer.toString());
-		
-		System.out.println("Enter a withdraw value: ");
-		double withdrawValue = scanner.nextDouble();
-		customer.decreaseValue(withdrawValue);
-		System.out.println(customer.toString());
 
 		
 		
